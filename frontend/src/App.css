@@ -1,0 +1,281 @@
+:root {
+  --bg: #f3f2f1;
+  --surface: #ffffff;
+  --text: #0b0c0c;
+  --muted: #505a5f;
+  --border: #b1b4b6;
+  --focus: #ffdd00;
+  --brand: #1d70b8;
+  --brand-dark: #003078;
+  --danger: #d4351c;
+  --danger-dark: #942514;
+  --success-bg: #cce2d8;
+  --error-bg: #f6d7d2;
+  --shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+  font-family:
+    "Source Sans 3",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: var(--brand);
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--brand-dark);
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.masthead {
+  background: var(--brand);
+  color: #fff;
+  padding: 1.75rem 1rem 2rem;
+  box-shadow: var(--shadow);
+}
+
+.masthead__inner {
+  max-width: 58rem;
+  margin: 0 auto;
+}
+
+.masthead__title {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.masthead__lede {
+  margin: 0;
+  max-width: 40rem;
+  font-size: 1.125rem;
+  opacity: 0.95;
+}
+
+.masthead a {
+  color: #fff;
+  font-weight: 600;
+}
+
+.main {
+  flex: 1;
+  max-width: 58rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  width: 100%;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 1.25rem 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.panel__title {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-bottom: 4px solid var(--brand);
+  padding-bottom: 0.35rem;
+}
+
+.banner {
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 2px;
+  border: 1px solid var(--border);
+  font-weight: 600;
+}
+
+.banner--error {
+  background: var(--error-bg);
+  border-color: var(--danger);
+  color: var(--danger-dark);
+}
+
+.form__row {
+  margin-bottom: 1rem;
+}
+
+.form__row label,
+.task-card__label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.form__row--split {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .form__row--split {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.input {
+  width: 100%;
+  max-width: 100%;
+  font: inherit;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--text);
+  border-radius: 2px;
+}
+
+.input:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 0;
+}
+
+.input--textarea {
+  resize: vertical;
+  min-height: 5rem;
+}
+
+.input--inline {
+  max-width: 16rem;
+}
+
+.form__actions {
+  margin-top: 0.5rem;
+}
+
+.button {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.6rem 1.25rem;
+  border-radius: 2px;
+  border: 2px solid transparent;
+}
+
+.button:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 0;
+}
+
+.button--primary {
+  background: #00703c;
+  color: #fff;
+  border-color: #00703c;
+}
+
+.button--primary:hover {
+  background: #005a30;
+  border-color: #005a30;
+}
+
+.button--warning {
+  background: #fff;
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.button--warning:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+.muted {
+  color: var(--muted);
+  margin: 0;
+}
+
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.task-card {
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 1rem 1.1rem;
+  background: #fafafa;
+}
+
+.task-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.task-card__title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.task-card__desc {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+}
+
+.task-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+}
+
+.task-meta dt {
+  margin: 0;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.task-meta dd {
+  margin: 0.15rem 0 0;
+}
+
+.task-card__row {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+  background: var(--surface);
+}
+
+.footer p {
+  margin: 0;
+}
