@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 from flask import Flask, jsonify, render_template_string
 
@@ -37,10 +38,14 @@ def create_app(test_config: dict | None = None) -> Flask:
     app = Flask(__name__)
     CORS(app)
 
+    # Always put SQLite next to the backend package (not cwd), unless overridden.
+    _default_sqlite = (
+        Path(__file__).resolve().parent.parent / "tasks.db"
+    ).as_posix()
+    _default_uri = f"sqlite:///{_default_sqlite}"
+
     app.config.from_mapping(
-        SQLALCHEMY_DATABASE_URI=os.environ.get(
-            "DATABASE_URL", "sqlite:///tasks.db"
-        ),
+        SQLALCHEMY_DATABASE_URI=os.environ.get("DATABASE_URL", _default_uri),
         SQLALCHEMY_TRACK_MODIFICATIONS=False,
     )
     if test_config:
