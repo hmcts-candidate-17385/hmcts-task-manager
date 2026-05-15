@@ -1,5 +1,7 @@
 # HMCTS task manager (technical exercise)
 
+For this challenge, I chose to use languages and tools I am trying to be more comfortable with, while keeping the design close to the kind of full-stack service HMCTS described. Although the workplace stack may use different technologies such as Java, Spring Boot, Node.js, Azure, Docker, and Kubernetes, this project helped me show that the underlying principles are transferable. I focused on building a clean REST API, validating input, handling errors, storing data in a database, documenting endpoints with Swagger/OpenAPI, and connecting the frontend to the backend. This helped me practise solving the same engineering problems that appear across different languages: clear structure, maintainable code, testing, reliable data handling, and building software around user needs.
+
 Caseworkers manage **tasks** with a **Flask + SQLite** API and a **React (Vite)** UI: create, list, update **status**, and delete tasks.
 
 ## Repository layout
